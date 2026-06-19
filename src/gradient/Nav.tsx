@@ -14,11 +14,20 @@ export const Nav = () => {
       className="relative z-20 flex items-center justify-between px-6 md:px-12 lg:px-20 py-8"
     >
       <a href="#home" className="flex items-center gap-3 group">
-        <div className="w-10 h-10 animated-logo shadow-md group-hover:scale-105 transition-transform duration-300">
-          <div className="animated-logo-inner">H</div>
+        <div className="relative w-10 h-10 flex items-center justify-center">
+          {/* Subtle breathing glow */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#7b3fe4] to-[#d946ef] rounded-xl blur-md opacity-40 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
+          
+          {/* Solid glass foreground */}
+          <div className="absolute inset-0 bg-[var(--panel-bg)] backdrop-blur-md border border-[var(--panel-border)] rounded-xl group-hover:scale-110 transition-transform duration-300" />
+          
+          {/* Colorful H */}
+          <span className="relative z-10 font-display font-bold text-xl bg-gradient-to-tr from-[#7b3fe4] to-[#d946ef] hover-colourful-text">
+            H
+          </span>
         </div>
         <div className="text-2xl font-semibold tracking-tight text-[var(--text-main)] flex items-center group-hover:hover-colourful-text transition-colors duration-300">
-          Hemanth<sup className="text-sm font-normal ml-0.5">®</sup>
+          Hemanth<sup className="text-sm font-normal ml-0.5 text-[var(--text-main)]">®</sup>
         </div>
       </a>
       
