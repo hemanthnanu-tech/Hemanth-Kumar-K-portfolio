@@ -35,6 +35,11 @@ const AppContent = () => {
     };
 
     const handleMouseOver = (e: MouseEvent | TouchEvent) => {
+      // Only apply hover effects on devices that support true hover (desktop)
+      if (window.matchMedia && !window.matchMedia('(hover: hover)').matches) {
+        return;
+      }
+      
       try {
         const target = e.target as HTMLElement;
         if (target && target.closest && target.closest('a, button, .glass-panel, .group, .cursor-pointer')) {
@@ -43,20 +48,27 @@ const AppContent = () => {
           document.documentElement.classList.remove('glow-away');
         }
       } catch (err) {
-        // Silently ignore if target.closest is not a function
+        // Silently ignore
       }
+    };
+    
+    // Clear the glow on touch end just in case
+    const handleTouchEnd = () => {
+      document.documentElement.classList.remove('glow-away');
     };
     
     window.addEventListener('mousemove', handleMove, { passive: true });
     window.addEventListener('touchmove', handleMove, { passive: true });
     window.addEventListener('touchstart', handleMove, { passive: true });
     window.addEventListener('mouseover', handleMouseOver, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
     
     return () => {
       window.removeEventListener('mousemove', handleMove);
       window.removeEventListener('touchmove', handleMove);
       window.removeEventListener('touchstart', handleMove);
       window.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 

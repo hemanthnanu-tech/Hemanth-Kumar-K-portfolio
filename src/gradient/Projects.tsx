@@ -53,14 +53,14 @@ const HARDWARE_PROJECTS = [
     desc: 'Engineered a completely offline, locally-executed AI assistant emphasizing zero cloud dependency and maximum user data privacy.',
     tags: ['AI/ML', 'Privacy', 'Local Execution'],
     colSpan: 'md:col-span-2 lg:col-span-2',
-    link: '#'
+    link: 'https://github.com/hemanthnanu-tech/Offline-AI-Assistant'
   },
   {
     id: 'h2', title: 'IoT Weather & Air Quality',
     desc: 'Designed hardware architecture for a cloud-connected microcontroller system dynamically tracking real-time environmental metrics.',
     tags: ['Hardware', 'IoT', 'Sensors'],
     colSpan: 'md:col-span-1 lg:col-span-1',
-    link: '#'
+    link: 'https://github.com/hemanthnanu-tech/IoT-Weather-Air-Quality'
   },
   {
     id: 'h3', title: 'Gesture Wheelchair',
