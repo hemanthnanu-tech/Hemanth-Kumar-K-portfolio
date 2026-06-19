@@ -16,27 +16,46 @@ const AppContent = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
+    const handleMove = (e: MouseEvent | TouchEvent) => {
+      let clientX, clientY;
+      if ('touches' in e && e.touches.length > 0) {
+        clientX = e.touches[0].clientX;
+        clientY = e.touches[0].clientY;
+      } else if ('clientX' in e) {
+        clientX = (e as MouseEvent).clientX;
+        clientY = (e as MouseEvent).clientY;
+      } else {
+        return;
+      }
+      
+      const x = (clientX / window.innerWidth) * 100;
+      const y = (clientY / window.innerHeight) * 100;
       document.documentElement.style.setProperty('--mouse-x', `${x}%`);
       document.documentElement.style.setProperty('--mouse-y', `${y}%`);
     };
 
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target && target.closest && target.closest('a, button, .glass-panel, .group, .cursor-pointer')) {
-        document.documentElement.classList.add('glow-away');
-      } else {
-        document.documentElement.classList.remove('glow-away');
+    const handleMouseOver = (e: MouseEvent | TouchEvent) => {
+      try {
+        const target = e.target as HTMLElement;
+        if (target && target.closest && target.closest('a, button, .glass-panel, .group, .cursor-pointer')) {
+          document.documentElement.classList.add('glow-away');
+        } else {
+          document.documentElement.classList.remove('glow-away');
+        }
+      } catch (err) {
+        // Silently ignore if target.closest is not a function
       }
     };
     
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('mousemove', handleMove, { passive: true });
+    window.addEventListener('touchmove', handleMove, { passive: true });
+    window.addEventListener('touchstart', handleMove, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver, { passive: true });
     
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', handleMove);
+      window.removeEventListener('touchmove', handleMove);
+      window.removeEventListener('touchstart', handleMove);
       window.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
