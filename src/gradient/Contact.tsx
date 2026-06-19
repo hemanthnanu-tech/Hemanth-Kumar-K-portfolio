@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mail, Phone, Github, MapPin } from 'lucide-react';
+import { Send, Mail, Phone, Github, MapPin, Linkedin } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const Contact = () => {
@@ -63,6 +63,13 @@ export const Contact = () => {
                   text: '+91 9538520031', 
                   href: 'tel:+919538520031',
                   hoverBorder: 'group-hover:border-[#25D366] group-hover:shadow-[0_0_15px_#25D36630]'
+                },
+                { 
+                  icon: <Linkedin size={18} />, 
+                  hoverUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg',
+                  text: 'hemanth-kumar-98744b313', 
+                  href: 'https://www.linkedin.com/in/hemanth-kumar-98744b313',
+                  hoverBorder: 'group-hover:border-[#0A66C2] group-hover:shadow-[0_0_15px_#0A66C230]'
                 },
                 { 
                   icon: <Github size={18} />, 

@@ -14,7 +14,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex items-center gap-6 text-[13px] font-medium text-[var(--text-muted)]">
-          <a href="#" className="hover:text-[var(--text-main)] transition-colors">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/hemanth-kumar-98744b313" target="_blank" rel="noreferrer" className="hover:text-[var(--text-main)] transition-colors">LinkedIn</a>
           <a href="https://github.com/hemanthnanu-tech" target="_blank" rel="noreferrer" className="hover:text-[var(--text-main)] transition-colors">GitHub</a>
           <a href="mailto:hemanth2678nanu@gmail.com" className="hover:text-[var(--text-main)] transition-colors">Email</a>
         </div>
