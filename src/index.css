@@ -62,11 +62,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Grayscale all images and SVGs */
-img, svg {
-  filter: grayscale(100%);
-}
-
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
