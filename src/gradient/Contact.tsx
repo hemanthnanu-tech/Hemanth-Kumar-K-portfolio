@@ -63,18 +63,18 @@ export const Contact = () => {
                   transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
                 >
                   {item.href ? (
-                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="flex items-center gap-4 text-[var(--text-main)] hover:text-[var(--accent)] transition-colors group w-fit">
-                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center group-hover:border-[var(--accent)] transition-colors">
+                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="flex items-center gap-4 text-[var(--text-main)] group w-fit">
+                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center hover-colourful transition-colors">
                         {item.icon}
                       </div>
-                      <span className="font-medium">{item.text}</span>
+                      <span className="font-medium hover-colourful-text">{item.text}</span>
                     </a>
                   ) : (
-                    <div className="flex items-center gap-4 text-[var(--text-main)]">
-                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center">
+                    <div className="flex items-center gap-4 text-[var(--text-main)] group w-fit">
+                      <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center hover-colourful transition-colors cursor-default">
                         {item.icon}
                       </div>
-                      <span className="font-medium">{item.text}</span>
+                      <span className="font-medium hover-colourful-text">{item.text}</span>
                     </div>
                   )}
                 </motion.div>
@@ -117,7 +117,7 @@ export const Contact = () => {
                 value={form.message}
                 onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
               />
-              <button type="submit" className="btn-hero w-full py-4 mt-2 text-[15px]">
+              <button type="submit" className="btn-hero hover-colourful w-full py-4 mt-2 text-[15px]">
                 Send Message <Send size={16} className="ml-2" />
               </button>
             </form>
