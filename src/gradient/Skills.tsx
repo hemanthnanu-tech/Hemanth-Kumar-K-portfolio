@@ -42,7 +42,7 @@ export const Skills = () => {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: false, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="section-heading text-center mb-16"
         >
@@ -55,7 +55,7 @@ export const Skills = () => {
               key={s.cat}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className={`glass-panel flex flex-col h-full ${idx === 0 || idx === 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}
             >

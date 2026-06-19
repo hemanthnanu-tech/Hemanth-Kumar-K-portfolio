@@ -16,10 +16,10 @@
   --btn-border: rgba(0, 0, 0, 0.1);
   --btn-hover-bg: rgba(255, 255, 255, 0.9);
   
-  /* Dramatically increased visibility for light mode glow */
-  --glow-core: rgba(123, 63, 228, 0.65);
-  --glow-mid: rgba(217, 70, 239, 0.35);
-  --glow-outer: rgba(68, 17, 138, 0.15);
+  /* Increased glow visibility for light mode */
+  --glow-core: rgba(123, 63, 228, 0.35);
+  --glow-mid: rgba(217, 70, 239, 0.15);
+  --glow-outer: rgba(68, 17, 138, 0.05);
   
   --heading-gradient-from: #000000;
   --heading-gradient-to: #666666;
@@ -52,6 +52,10 @@ html.dark {
   
   /* Soft Premium Pink/Purple */
   --accent: #D946EF; 
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -107,7 +111,8 @@ body {
 /* Make colour float away (diffuse and fade) when cursor hovers over glass panels or links */
 body:has(.glass-panel:hover) .glow-main,
 body:has(a:hover) .glow-main,
-body:has(button:hover) .glow-main {
+body:has(button:hover) .glow-main,
+body:has(.group:hover) .glow-main {
   transform: translate(-50%, -50%) scale(1.8);
   opacity: 0.15;
 }
