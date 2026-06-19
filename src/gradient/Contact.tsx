@@ -7,7 +7,16 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Message sent successfully!');
+    
+    // Format the WhatsApp message
+    const whatsappNumber = "919538520031"; // Standard wa.me format without the +
+    const text = `Hello Hemanth,\n\nMy name is ${form.name}.\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Clear the form
     setForm({ name: '', email: '', message: '' });
   };
 
