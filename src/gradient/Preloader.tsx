@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'motion/react';
 
 const FONTS = [
   "Arial, sans-serif",
@@ -15,50 +15,57 @@ const FONTS = [
   "'Outfit', sans-serif" // Final premium font
 ];
 
-export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
+export const Preloader = ({ loading, onComplete }: { loading: boolean, onComplete: () => void }) => {
   const [index, setIndex] = useState(0);
+  const onCompleteRef = useRef(onComplete);
+
+  // Keep the ref up to date so we don't need it in dependency arrays
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
 
   useEffect(() => {
+    if (!loading) return;
+
     let timer: number;
     let completeTimer: number;
 
     if (index < FONTS.length - 1) {
-      // 180ms per font gives a perfectly smooth crossfade sequence
       timer = window.setTimeout(() => {
         setIndex((prev) => Math.min(prev + 1, FONTS.length - 1));
       }, 180);
     } else {
       completeTimer = window.setTimeout(() => {
-        onComplete();
-      }, 1000); // Hold the final font for 1s before revealing site
+        onCompleteRef.current();
+      }, 1000);
     }
 
     return () => {
       clearTimeout(timer);
       clearTimeout(completeTimer);
     };
-  }, [index, onComplete]);
+  }, [index, loading]);
 
   return (
     <motion.div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[var(--bg-color)]"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[var(--bg-color)] pointer-events-none"
       initial={{ y: 0 }}
-      exit={{ y: "-100%", transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] } }}
+      animate={{ y: loading ? 0 : "-100%" }}
+      transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
     >
       <div className="relative w-full h-32 flex items-center justify-center">
-        <AnimatePresence>
+        {FONTS.map((font, i) => (
           <motion.div
-            key={index}
+            key={i}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            animate={{ opacity: index === i ? 1 : 0 }}
             transition={{ duration: 0.15, ease: "easeInOut" }}
             className="absolute text-4xl md:text-6xl text-[var(--text-main)] tracking-tight whitespace-nowrap"
-            style={{ fontFamily: FONTS[index] }}
+            style={{ fontFamily: font }}
           >
             Hemanth Kumar K
           </motion.div>
-        </AnimatePresence>
+        ))}
       </div>
     </motion.div>
   );

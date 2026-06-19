@@ -11,11 +11,9 @@ import { Certifications } from './gradient/Certifications';
 import { Contact } from './gradient/Contact';
 import { Footer } from './gradient/Footer';
 import { Preloader } from './gradient/Preloader';
-import { AnimatePresence } from 'motion/react';
 
 const AppContent = () => {
   const [loading, setLoading] = useState(true);
-  const [preloaderMounted, setPreloaderMounted] = useState(true);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -29,18 +27,9 @@ const AppContent = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const handlePreloaderComplete = () => {
-    setLoading(false);
-    setTimeout(() => {
-      setPreloaderMounted(false);
-    }, 1000); // Unmount strictly after animation
-  };
-
   return (
     <div className="min-h-screen relative overflow-hidden flex flex-col transition-colors duration-500">
-      <AnimatePresence>
-        {loading && <Preloader key="preloader" onComplete={handlePreloaderComplete} />}
-      </AnimatePresence>
+      <Preloader loading={loading} onComplete={() => setLoading(false)} />
 
       <div className={loading ? "opacity-0 h-screen overflow-hidden" : "opacity-100 transition-opacity duration-1000"}>
         <MouseTrail />
