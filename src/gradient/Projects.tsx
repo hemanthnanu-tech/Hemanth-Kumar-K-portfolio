@@ -49,8 +49,15 @@ const SOFTWARE_PROJECTS = [
     id: 's6', title: 'HemiTyping',
     desc: 'A futuristic typing engine packed with fluid animations, hyper-smooth effects, electric UI, and dynamic challenges.',
     tags: ['JavaScript', 'Typing Engine'],
-    colSpan: 'md:col-span-3 lg:col-span-3',
+    colSpan: 'md:col-span-2 lg:col-span-2',
     link: 'https://hemanthnanu-tech.github.io/HemiTyping/'
+  },
+  {
+    id: 's7', title: 'MyMoney',
+    desc: 'An Android application designed for intuitive personal finance management and seamless daily expense tracking.',
+    tags: ['Kotlin', 'Android', 'Finance'],
+    colSpan: 'md:col-span-1 lg:col-span-1',
+    link: 'https://github.com/hemanthnanu-tech/MyMoney'
   },
 ];
 
