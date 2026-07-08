@@ -31,7 +31,7 @@ export const About = () => {
               Innovative Electronics and Communication Engineering student bridging hands-on hardware expertise with modern software development. Strong foundation in system architecture, technical ideation, and UI/UX conceptualization. 
             </p>
             <p className="text-[var(--text-muted)] text-[16px] leading-[1.8] mb-10">
-              Adept at leveraging AI-assisted workflows to rapidly prototype and deploy complex applications. Known for deep debugging, having fixed 30+ complex logic bugs, and ensuring seamless integration between physical sensors and cloud logic.
+              Adept at leveraging AI-assisted workflows to rapidly prototype and deploy complex applications. Known for deep debugging (30+ fixes, logic bugs, etc.) and ensuring seamless integration between physical sensors and cloud logic.
             </p>
             
             <div className="flex flex-wrap gap-4">
