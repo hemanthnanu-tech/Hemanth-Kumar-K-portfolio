@@ -8,7 +8,7 @@ const SOFTWARE_PROJECTS = [
     desc: 'Engineered a completely offline, locally-executed AI assistant emphasizing zero cloud dependency and maximum user data privacy.',
     tags: ['AI/ML', 'Privacy', 'Local Execution'],
     colSpan: 'md:col-span-2 lg:col-span-2',
-    link: 'https://github.com/hemanthnanu-tech/Offline-AI-Assistant'
+    link: 'https://hemanthnanu-tech.github.io/Offline-Ai/'
   },
   {
     id: 's1', title: '1fs-studio-website',
