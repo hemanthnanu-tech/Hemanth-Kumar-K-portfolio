@@ -7,10 +7,10 @@ import { motion } from 'motion/react';
 // 2. Put your PDFs or JPEGs inside "public/certificates/".
 // 3. Update the 'link' property below to match your exact file name.
 const CERTIFICATIONS = [
+  { title: 'Industrial Automation (PLC, SCADA, IoT, Mechatronics)', issuer: 'Government Tool Room and Training Centre (GTTC)', period: 'Feb 2026 – May 2026', link: 'https://drive.google.com/file/d/1Q5TDuBkT7LNS2r0ASyzBillgVxxVnRzA/view?usp=sharing' },
   { title: 'Make Agentic AI Work for You', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1cj0_1PYq_IKXkoG2u-xUvZy3bhGVdORU/view?usp=sharing' },
   { title: 'Principles of UX Review and Enhancement', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1E7on5dG25BTiiWlbQe80hnIwtyPzcEO4/view?usp=sharing' },
   { title: 'Unleashing the Power of AI Agents', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1swWQJ-UKEpw3QkTzZFGn-295iszi544f/view?usp=sharing' },
-  { title: 'Industrial Automation (PLC, SCADA, IoT, Mechatronics)', issuer: 'Government Tool Room and Training Centre (GTTC)', period: 'Feb 2026 – May 2026', link: 'https://drive.google.com/file/d/1Q5TDuBkT7LNS2r0ASyzBillgVxxVnRzA/view?usp=sharing' },
   { title: 'PCB Assembly and Testing', issuer: 'Semi-Pro Technology', period: 'Mar 2023 – Jun 2023', link: '#' },
   { title: 'Introduction to Robotic Process Automation (RPA)', issuer: 'Infosys Springboard', period: 'Jan 2023', link: 'https://drive.google.com/file/d/1BOrWhMl6tEQeqvrnxrrqdPlFWyEUdA4c/view?usp=sharing' },
   { title: 'Appium - Mobile Automation Overview', issuer: 'Infosys Springboard', period: 'Jan 2023', link: 'https://drive.google.com/file/d/1qMe0LbWhJMiCz8vCkQcvdXTG-hqUPzR4/view?usp=sharing' },

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 const EXPERIENCE = [
   {
     id: 'exp1',
-    company: 'GTTC',
+    company: 'Government Tool Room and Training Centre (GTTC)',
     role: 'Industrial Automation Intern',
     period: 'Feb 2026 – May 2026',
     location: 'Bangalore',
