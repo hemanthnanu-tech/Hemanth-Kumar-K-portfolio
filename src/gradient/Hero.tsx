@@ -44,7 +44,7 @@ export const Hero = () => {
         {/* Main Title */}
         <motion.h1 variants={fadeIn} className="font-display text-[clamp(2.5rem,7vw,6.5rem)] leading-[1.0] font-semibold tracking-[-0.03em] mb-6 text-[var(--text-main)] drop-shadow-sm">
           Welcome to My<br />
-          Portfolio
+          <span className="section-heading !text-[clamp(2.5rem,7vw,6.5rem)] !mb-0 !leading-[1.0] pb-2 inline-block">Portfolio</span>
         </motion.h1>
         
         {/* Subtitle */}
