@@ -15,21 +15,24 @@ const SOFTWARE_PROJECTS = [
     desc: 'A premium digital storefront for 1FS Photography, bridging top-tier camera and gimbal rentals with professional photoshoot packages.',
     tags: ['React', 'TypeScript', 'Tailwind'],
     colSpan: 'md:col-span-1 lg:col-span-1',
-    link: 'https://hemanthnanu-tech.github.io/1fs-studio-website/'
+    link: 'https://hemanthnanu-tech.github.io/1fs-studio-website/',
+    acquired: true
   },
   {
     id: 's2', title: 'EvGrama',
     desc: 'EV-Grama is an innovative Android application designed to crowdsource and discover electric vehicle (EV) charging spots in rural settings.',
     tags: ['Kotlin', 'Android', 'Crowdsourcing'],
     colSpan: 'md:col-span-1 lg:col-span-1',
-    link: 'https://github.com/hemanthnanu-tech/EvGrama'
+    link: 'https://github.com/hemanthnanu-tech/EvGrama',
+    acquired: true
   },
   {
     id: 's3', title: 'Jan-Aushadhi-Finder',
     desc: 'A specialized Android application designed to make healthcare more accessible and affordable. Allows users to quickly search for generic alternatives.',
     tags: ['Kotlin', 'Android', 'Healthcare'],
     colSpan: 'md:col-span-2 lg:col-span-2',
-    link: 'https://github.com/hemanthnanu-tech/Jan-Aushadhi-Finder'
+    link: 'https://github.com/hemanthnanu-tech/Jan-Aushadhi-Finder',
+    acquired: true
   },
   {
     id: 's4', title: 'FinTrack Elite v3.0',
@@ -98,7 +101,14 @@ const ProjectCard = ({ proj, index }: { proj: any, index: number }) => (
       </div>
     </div>
 
-    <h3 className="text-2xl font-medium text-[var(--text-main)] mb-4 tracking-tight z-10 font-display">{proj.title}</h3>
+    <h3 className="text-2xl font-medium text-[var(--text-main)] mb-4 tracking-tight z-10 font-display flex flex-wrap items-center gap-3">
+      {proj.title}
+      {proj.acquired && (
+        <span className="px-2 py-1 text-[10px] font-bold tracking-widest uppercase bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20 rounded-md">
+          Acquired
+        </span>
+      )}
+    </h3>
     <p className="text-[var(--text-muted)] text-[15px] leading-relaxed mb-8 flex-grow z-10 max-w-lg">
       {proj.desc}
     </p>
