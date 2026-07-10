@@ -1,4 +1,4 @@
-# Hemanth Kumar K - Premium Portfolio
+# Hemanth Kumar K - Portfolio
 
 A highly premium, interactive, and beautifully designed personal portfolio website showcasing my expertise in Embedded Systems, IoT, and Full-Stack Digital Experiences.
 
