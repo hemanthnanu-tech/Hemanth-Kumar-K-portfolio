@@ -2,21 +2,21 @@ import React from 'react';
 
 export const Footer = () => {
   return (
-    <footer className="relative py-12 px-6 md:px-12 lg:px-20 border-t border-[var(--panel-border)] z-10 bg-[var(--bg-color)]/80 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="relative pb-12 px-4 md:px-8 z-10">
+      <div className="max-w-5xl mx-auto glass-panel !p-6 md:!py-5 md:!px-10 flex flex-col md:flex-row items-center justify-between gap-6 rounded-[2rem] md:rounded-full hover:!translate-y-0">
         
-        <div className="text-xl font-semibold tracking-tight text-[var(--text-main)] flex items-center">
+        <div className="text-2xl font-semibold tracking-tight text-[var(--text-main)] flex items-center font-display">
           Hemanth<sup className="text-xs font-normal ml-0.5 text-[var(--accent)]">®</sup>
         </div>
 
-        <div className="text-[13px] text-[var(--text-muted)]">
+        <div className="text-[13px] text-[var(--text-muted)] font-medium">
           &copy; {new Date().getFullYear()} Hemanth Kumar K. All rights reserved.
         </div>
 
-        <div className="flex items-center gap-6 text-[13px] font-medium text-[var(--text-muted)]">
-          <a href="https://www.linkedin.com/in/hemanth-kumar-98744b313" target="_blank" rel="noreferrer" className="hover:text-[var(--text-main)] transition-colors">LinkedIn</a>
-          <a href="https://github.com/hemanthnanu-tech" target="_blank" rel="noreferrer" className="hover:text-[var(--text-main)] transition-colors">GitHub</a>
-          <a href="mailto:hemanth2678nanu@gmail.com" className="hover:text-[var(--text-main)] transition-colors">Email</a>
+        <div className="flex items-center gap-2 text-[13px] font-medium text-[var(--text-muted)]">
+          <a href="https://www.linkedin.com/in/hemanth-kumar-98744b313" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-full hover:bg-[var(--text-main)] hover:text-[var(--bg-color)] transition-colors">LinkedIn</a>
+          <a href="https://github.com/hemanthnanu-tech" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-full hover:bg-[var(--text-main)] hover:text-[var(--bg-color)] transition-colors">GitHub</a>
+          <a href="mailto:hemanth2678nanu@gmail.com" className="px-4 py-2 rounded-full hover:bg-[var(--text-main)] hover:text-[var(--bg-color)] transition-colors">Email</a>
         </div>
 
       </div>
