@@ -8,13 +8,13 @@ import { motion } from 'motion/react';
 // 3. Update the 'link' property below to match your exact file name.
 const CERTIFICATIONS = [
   { title: 'Industrial Automation (PLC, SCADA, IoT, Mechatronics)', issuer: 'Government Tool Room and Training Centre (GTTC)', period: 'Feb 2026 – May 2026', link: 'https://drive.google.com/file/d/1Q5TDuBkT7LNS2r0ASyzBillgVxxVnRzA/view?usp=sharing' },
-  { title: 'Google Analytics', issuer: 'Google Analytics Academy', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1VJhsoiELvYC_eH5VAjNHPx5OHRMh2Z6D/view?usp=sharing' },
-  { title: 'Make Agentic AI Work for You', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1cj0_1PYq_IKXkoG2u-xUvZy3bhGVdORU/view?usp=sharing' },
-  { title: 'Principles of UX Review and Enhancement', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1E7on5dG25BTiiWlbQe80hnIwtyPzcEO4/view?usp=sharing' },
-  { title: 'Unleashing the Power of AI Agents', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1swWQJ-UKEpw3QkTzZFGn-295iszi544f/view?usp=sharing' },
+  { title: 'Google Analytics', issuer: 'Google Analytics Academy', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1VJhsoiELvYC_eH5VAjNHPx5OHRMh2Z6D/view?usp=sharing', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg' },
+  { title: 'Make Agentic AI Work for You', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1cj0_1PYq_IKXkoG2u-xUvZy3bhGVdORU/view?usp=sharing', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg' },
+  { title: 'Principles of UX Review and Enhancement', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1E7on5dG25BTiiWlbQe80hnIwtyPzcEO4/view?usp=sharing', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg' },
+  { title: 'Unleashing the Power of AI Agents', issuer: 'IBM SkillsBuild', period: 'Jul 2026', link: 'https://drive.google.com/file/d/1swWQJ-UKEpw3QkTzZFGn-295iszi544f/view?usp=sharing', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg' },
   { title: 'PCB Assembly and Testing', issuer: 'Semi-Pro Technology', period: 'Mar 2023 – Jun 2023', link: '#' },
-  { title: 'Introduction to Robotic Process Automation (RPA)', issuer: 'Infosys Springboard', period: 'Jan 2023', link: 'https://drive.google.com/file/d/1BOrWhMl6tEQeqvrnxrrqdPlFWyEUdA4c/view?usp=sharing' },
-  { title: 'Appium - Mobile Automation Overview', issuer: 'Infosys Springboard', period: 'Jan 2023', link: 'https://drive.google.com/file/d/1qMe0LbWhJMiCz8vCkQcvdXTG-hqUPzR4/view?usp=sharing' },
+  { title: 'Introduction to Robotic Process Automation (RPA)', issuer: 'Infosys Springboard', period: 'Jan 2023', link: 'https://drive.google.com/file/d/1BOrWhMl6tEQeqvrnxrrqdPlFWyEUdA4c/view?usp=sharing', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg' },
+  { title: 'Appium - Mobile Automation Overview', issuer: 'Infosys Springboard', period: 'Jan 2023', link: 'https://drive.google.com/file/d/1qMe0LbWhJMiCz8vCkQcvdXTG-hqUPzR4/view?usp=sharing', logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg' },
   { title: 'PCB Designing and Fabrication', issuer: 'Indian Tech Keys', period: 'Jul 2022', link: '#' },
 ];
 
@@ -47,8 +47,12 @@ export const Certifications = () => {
             >
               <div>
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-10 h-10 rounded-full bg-[var(--btn-bg)] border border-[var(--panel-border)] flex items-center justify-center text-[var(--accent)] group-hover:scale-110 transition-transform">
-                    <Award size={18} />
+                  <div className="w-10 h-10 rounded-full bg-white border border-[var(--panel-border)] flex items-center justify-center text-[var(--accent)] group-hover:scale-110 transition-transform overflow-hidden shadow-sm">
+                    {cert.logoUrl ? (
+                      <img src={cert.logoUrl} alt={cert.issuer} className="w-6 h-6 object-contain" />
+                    ) : (
+                      <Award size={18} className="text-black" />
+                    )}
                   </div>
                   <ExternalLink size={16} className="text-[var(--text-muted)] opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>

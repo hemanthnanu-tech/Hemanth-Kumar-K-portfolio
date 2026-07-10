@@ -3,7 +3,7 @@ import React from 'react';
 export const Footer = () => {
   return (
     <footer className="relative pb-12 px-4 md:px-8 z-10">
-      <div className="max-w-5xl mx-auto glass-panel !p-6 md:!py-5 md:!px-10 flex flex-col md:flex-row items-center justify-between gap-6 rounded-[2rem] md:rounded-full hover:!translate-y-0">
+      <div className="max-w-5xl mx-auto glass-panel !p-6 md:!py-5 md:!px-10 flex flex-col md:flex-row items-center justify-between gap-6 rounded-[2rem] md:rounded-full hover:!translate-y-0 hover:!shadow-none hover:!bg-[#10b981]/20 hover:!border-[#10b981]/50 transition-colors">
         
         <div className="text-2xl font-semibold tracking-tight text-[var(--text-main)] flex items-center font-display">
           Hemanth<sup className="text-xs font-normal ml-0.5 text-[var(--accent)]">®</sup>
