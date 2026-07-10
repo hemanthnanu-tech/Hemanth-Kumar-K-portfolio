@@ -48,73 +48,85 @@ export const Contact = () => {
               Whether you have an idea for a project, need a technical consultation, or just want to chat about embedded systems and web tech—I'd love to hear from you.
             </p>
 
-            <div className="flex flex-col gap-1">
-              {[
-                { 
-                  icon: <Mail size={20} />, 
-                  text: 'hemanth2678nanu@gmail.com', 
-                  href: 'mailto:hemanth2678nanu@gmail.com',
-                  hoverColor: 'group-hover:text-[#EA4335]'
-                },
-                { 
-                  icon: <Phone size={20} />, 
-                  text: '+91 9538520031', 
-                  href: 'tel:+919538520031',
-                  hoverColor: 'group-hover:text-[#25D366]'
-                },
-                { 
-                  icon: <Linkedin size={20} />, 
-                  text: 'hemanth-kumar-98744b313', 
-                  href: 'https://www.linkedin.com/in/hemanth-kumar-98744b313',
-                  hoverColor: 'group-hover:text-[#0A66C2]'
-                },
-                { 
-                  icon: <Github size={20} />, 
-                  text: 'github.com/hemanthnanu-tech', 
-                  href: 'https://github.com/hemanthnanu-tech',
-                  hoverColor: 'group-hover:text-[var(--text-main)]'
-                },
-                { 
-                  icon: <MapPin size={20} />, 
-                  text: 'Bangalore, Karnataka, India',
-                  hoverColor: 'group-hover:text-[#4285F4]'
-                },
-              ].map((item, i) => (
-                <motion.div 
-                  key={item.text}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
-                >
-                  {item.href ? (
-                    <a 
-                      href={item.href} 
-                      target={item.href.startsWith('http') ? '_blank' : undefined} 
-                      rel="noreferrer" 
-                      className="group flex items-center gap-4 p-3 -ml-3 rounded-xl transition-all duration-300 hover:bg-[var(--panel-hover)] w-fit"
-                    >
-                      <div className={`text-[var(--text-muted)] transition-colors duration-300 ${item.hoverColor}`}>
-                        {item.icon}
-                      </div>
-                      <span className="font-medium text-[15px] text-[var(--text-muted)] group-hover:text-[var(--text-main)] transition-colors duration-300">
-                        {item.text}
-                      </span>
-                    </a>
-                  ) : (
-                    <div 
-                      className="group flex items-center gap-4 p-3 -ml-3 rounded-xl transition-all duration-300 hover:bg-[var(--panel-hover)] w-fit cursor-default"
-                    >
-                      <div className={`text-[var(--text-muted)] transition-colors duration-300 ${item.hoverColor}`}>
-                        {item.icon}
-                      </div>
-                      <span className="font-medium text-[15px] text-[var(--text-muted)] group-hover:text-[var(--text-main)] transition-colors duration-300">
-                        {item.text}
-                      </span>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              
+              {/* Box 1: Email (Wide) */}
+              <motion.a 
+                initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                href="mailto:hemanth2678nanu@gmail.com" 
+                className="col-span-2 sm:col-span-3 glass-panel !p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between group hover:bg-[#EA4335]/5 hover:border-[#EA4335]/30 transition-all cursor-pointer"
+              >
+                 <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 shrink-0 rounded-full bg-[var(--btn-bg)] flex items-center justify-center text-[#EA4335]">
+                       <Mail size={24} />
                     </div>
-                  )}
-                </motion.div>
-              ))}
+                    <div>
+                       <div className="text-[12px] text-[var(--text-muted)] font-mono uppercase tracking-widest mb-1">Email Me</div>
+                       <div className="text-sm sm:text-lg font-medium text-[var(--text-main)]">hemanth2678nanu@gmail.com</div>
+                    </div>
+                 </div>
+                 <ArrowUpRight className="hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity text-[#EA4335]" size={24} />
+              </motion.a>
+
+              {/* Box 2: LinkedIn (Square) */}
+              <motion.a 
+                initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                href="https://www.linkedin.com/in/hemanth-kumar-98744b313" 
+                target="_blank" rel="noreferrer"
+                className="col-span-1 glass-panel !p-5 flex flex-col items-center justify-center text-center group hover:bg-[#0A66C2]/5 hover:border-[#0A66C2]/30 transition-all aspect-square sm:aspect-auto sm:h-40 cursor-pointer"
+              >
+                 <Linkedin size={32} className="text-[#0A66C2] mb-3 group-hover:scale-110 transition-transform" />
+                 <div className="text-[14px] font-medium text-[var(--text-main)] mb-1">LinkedIn</div>
+                 <div className="text-[11px] text-[var(--text-muted)] truncate w-full">hemanth-kumar</div>
+              </motion.a>
+
+              {/* Box 3: GitHub (Square) */}
+              <motion.a 
+                initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                href="https://github.com/hemanthnanu-tech" 
+                target="_blank" rel="noreferrer"
+                className="col-span-1 glass-panel !p-5 flex flex-col items-center justify-center text-center group hover:bg-[var(--text-main)]/5 hover:border-[var(--text-main)]/20 transition-all aspect-square sm:aspect-auto sm:h-40 cursor-pointer"
+              >
+                 <Github size={32} className="text-[var(--text-main)] mb-3 group-hover:scale-110 transition-transform" />
+                 <div className="text-[14px] font-medium text-[var(--text-main)] mb-1">GitHub</div>
+                 <div className="text-[11px] text-[var(--text-muted)] truncate w-full">hemanthnanu-tech</div>
+              </motion.a>
+
+              {/* Box 4: WhatsApp (Square/Wide on mobile) */}
+              <motion.a 
+                initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                href="tel:+919538520031" 
+                className="col-span-2 sm:col-span-1 glass-panel !p-5 flex flex-col items-center justify-center text-center group hover:bg-[#25D366]/5 hover:border-[#25D366]/30 transition-all sm:h-40 cursor-pointer"
+              >
+                 <Phone size={32} className="text-[#25D366] mb-3 group-hover:scale-110 transition-transform" />
+                 <div className="text-[14px] font-medium text-[var(--text-main)] mb-1">WhatsApp</div>
+                 <div className="text-[11px] text-[var(--text-muted)] truncate w-full">+91 9538520031</div>
+              </motion.a>
+
+              {/* Box 5: Location (Wide) */}
+              <motion.div 
+                initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="col-span-2 sm:col-span-3 glass-panel !p-4 flex items-center justify-center gap-3 text-center group hover:bg-[#4285F4]/5 hover:border-[#4285F4]/30 transition-all cursor-default"
+              >
+                 <MapPin size={18} className="text-[#4285F4]" />
+                 <span className="text-[13px] font-medium text-[var(--text-main)] tracking-wide">Bangalore, Karnataka, India</span>
+              </motion.div>
+
             </div>
           </motion.div>
 

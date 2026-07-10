@@ -47,7 +47,7 @@ export const Experience = () => {
           Experience
         </motion.h2>
 
-        <div className="border-t border-[var(--panel-border)]">
+        <div className="relative border-l border-[var(--panel-border)] ml-3 md:ml-6 space-y-12 pb-10">
           {EXPERIENCE.map((exp, idx) => (
             <motion.div 
               key={exp.id}
@@ -55,65 +55,48 @@ export const Experience = () => {
               whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7, delay: idx * 0.1, ease: 'easeOut' }}
-              onMouseEnter={() => setHoveredIdx(idx)}
-              onMouseLeave={() => setHoveredIdx(null)}
-              className="group relative flex flex-col md:flex-row items-start md:items-center py-10 md:py-16 border-b border-[var(--panel-border)] transition-colors hover:bg-[var(--btn-bg)] -mx-6 px-6 md:-mx-12 md:px-12 cursor-crosshair"
+              className="relative pl-8 md:pl-12 group"
             >
+              {/* Timeline Dot */}
+              <div className="absolute left-[-5px] top-[40px] md:top-[48px] w-2.5 h-2.5 rounded-full bg-[var(--text-muted)] group-hover:bg-[var(--accent)] group-hover:shadow-[0_0_10px_var(--accent)] transition-all duration-300 z-10" />
               
-              {/* Massive Company Name */}
-              <div className="w-full md:w-1/2 mb-6 md:mb-0">
-                <div className="text-[13px] font-mono text-[var(--text-muted)] mb-2 uppercase tracking-widest">
-                  {exp.period}
-                </div>
-                <h3 className="text-4xl md:text-6xl font-medium tracking-tight text-[var(--text-main)] group-hover:translate-x-4 transition-transform duration-500 ease-out">
-                  {exp.company}
-                </h3>
-              </div>
-
-              {/* Details & Bullets */}
-              <div className="w-full md:w-1/2 flex flex-col relative">
-                <div className="flex justify-between items-start mb-6">
+              <div className="glass-panel p-6 md:p-8 hover:bg-[var(--panel-hover)] transition-colors">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
                   <div>
-                    <h4 className="text-xl md:text-2xl font-medium text-[var(--accent)] mb-2">{exp.role}</h4>
-                    <div className="flex items-center gap-1 text-[14px] text-[var(--text-muted)]">
+                    <h3 className="text-xl md:text-2xl font-medium text-[var(--text-main)] font-display tracking-tight group-hover:text-[var(--accent)] transition-colors duration-300">
+                      {exp.company}
+                    </h3>
+                    <div className="text-[15px] md:text-[16px] text-[var(--accent)] mt-1 font-medium">
+                      {exp.role}
+                    </div>
+                  </div>
+                  <div className="flex flex-col md:items-end gap-2">
+                    <div className="text-[12px] font-mono text-[var(--text-main)] bg-[var(--btn-bg)] border border-[var(--panel-border)] px-3 py-1 rounded-full w-fit whitespace-nowrap">
+                      {exp.period}
+                    </div>
+                    <div className="flex items-center gap-1 text-[13px] text-[var(--text-muted)] md:justify-end">
                       <MapPin size={14} /> {exp.location}
                     </div>
                   </div>
-                  <div className="w-12 h-12 rounded-full border border-[var(--panel-border)] flex items-center justify-center text-[var(--text-muted)] group-hover:bg-[var(--accent)] group-hover:text-[var(--bg-color)] group-hover:border-[var(--accent)] transition-all duration-300 transform group-hover:rotate-45">
-                    <ArrowUpRight size={20} />
-                  </div>
                 </div>
 
-                {/* Animated Bullets */}
-                <AnimatePresence>
-                  {hoveredIdx === idx && (
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="space-y-3 mb-6 pt-4 border-t border-[var(--panel-border)]">
-                        {exp.bullets.map((b, i) => (
-                          <div key={i} className="text-[15px] text-[var(--text-muted)] leading-relaxed">
-                            • {b}
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex flex-wrap gap-2 pb-2">
-                        {exp.tags.map(t => (
-                          <span key={t} className="px-3 py-1 text-[11px] font-mono tracking-wider text-[var(--accent)] uppercase bg-[var(--btn-bg)] border border-[var(--panel-border)] rounded-full">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div className="space-y-3 mb-6">
+                  {exp.bullets.map((b, i) => (
+                    <div key={i} className="text-[15px] text-[var(--text-muted)] leading-relaxed flex items-start gap-3">
+                      <span className="text-[var(--accent)] opacity-50 mt-1.5 text-[10px]">■</span>
+                      <span>{b}</span>
+                    </div>
+                  ))}
+                </div>
 
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-[var(--panel-border)]">
+                  {exp.tags.map(t => (
+                    <span key={t} className="px-3 py-1 text-[12px] font-mono tracking-wider text-[var(--text-main)] bg-[var(--btn-bg)] border border-[var(--panel-border)] rounded-md">
+                      {t}
+                    </span>
+                  ))}
+                </div>
               </div>
-              
             </motion.div>
           ))}
         </div>
