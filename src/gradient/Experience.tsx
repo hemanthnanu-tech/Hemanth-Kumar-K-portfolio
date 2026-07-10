@@ -51,10 +51,10 @@ export const Experience = () => {
           {EXPERIENCE.map((exp, idx) => (
             <motion.div 
               key={exp.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              initial={{ opacity: 0, scale: 0.9, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ type: "spring", stiffness: 100, damping: 15, delay: idx * 0.1 }}
               onMouseEnter={() => setHoveredIdx(idx)}
               onMouseLeave={() => setHoveredIdx(null)}
               className="group relative flex flex-col md:flex-row items-start md:items-center py-10 md:py-16 border-b border-[var(--panel-border)] transition-colors hover:bg-[var(--btn-bg)] -mx-6 px-6 md:-mx-12 md:px-12 cursor-crosshair"

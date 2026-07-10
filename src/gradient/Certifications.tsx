@@ -39,10 +39,10 @@ export const Certifications = () => {
               target="_blank"
               rel="noopener noreferrer"
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              initial={{ opacity: 0, scale: 0.8, y: 60 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ type: "spring", stiffness: 100, damping: 15, delay: idx * 0.1 }}
               className="glass-panel group flex flex-col justify-between cursor-pointer"
             >
               <div>

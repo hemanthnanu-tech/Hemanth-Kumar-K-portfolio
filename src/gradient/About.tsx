@@ -20,10 +20,10 @@ export const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Bio Panel */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.1 }}
             className="glass-panel"
           >
             <h3 className="text-2xl font-medium mb-6 text-[var(--text-main)] tracking-tight">The Bridge Between Silicon & Software</h3>
@@ -49,10 +49,10 @@ export const About = () => {
           
           {/* Education Panel */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.2 }}
             className="glass-panel"
           >
             <div className="flex items-center gap-3 mb-8">
