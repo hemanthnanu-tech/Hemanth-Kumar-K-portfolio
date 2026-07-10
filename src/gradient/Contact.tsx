@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mail, Phone, Github, MapPin, Linkedin } from 'lucide-react';
+import { Send, Mail, Phone, Github, MapPin, Linkedin, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export const Contact = () => {
@@ -93,28 +93,42 @@ export const Contact = () => {
                   transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
                 >
                   {item.href ? (
-                    <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="flex items-center gap-3 sm:gap-4 text-[var(--text-main)] hover:text-[var(--accent)] transition-colors group w-full max-w-full">
-                      <div className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center transition-all duration-300 relative overflow-hidden ${item.hoverBorder}`}>
-                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-0">
+                    <a 
+                      href={item.href} 
+                      target={item.href.startsWith('http') ? '_blank' : undefined} 
+                      rel="noreferrer" 
+                      className={`flex items-center gap-4 sm:gap-5 p-3 sm:p-4 rounded-2xl border border-transparent transition-all duration-500 group w-full max-w-full hover:bg-[var(--panel-hover)] hover:backdrop-blur-md ${item.hoverBorder}`}
+                    >
+                      <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--btn-bg)] border border-[var(--panel-border)] flex items-center justify-center transition-transform duration-700 group-hover:rotate-[360deg] relative overflow-hidden shadow-sm">
+                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 text-[var(--text-muted)] group-hover:text-[var(--text-main)]">
                           {item.icon}
                         </div>
-                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 scale-0 group-hover:scale-100">
-                          <img src={item.hoverUrl} alt="icon" className={`w-5 h-5 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
+                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                          <img src={item.hoverUrl} alt="icon" className={`w-6 h-6 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
                         </div>
                       </div>
-                      <span className="font-medium text-sm sm:text-base truncate">{item.text}</span>
+                      <span className="font-medium text-[15px] sm:text-[17px] text-[var(--text-main)] truncate transition-transform duration-500 group-hover:translate-x-2">
+                        {item.text}
+                      </span>
+                      <div className="ml-auto opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[var(--text-muted)]">
+                        <ArrowUpRight size={20} />
+                      </div>
                     </a>
                   ) : (
-                    <div className="flex items-center gap-3 sm:gap-4 text-[var(--text-main)] group w-full max-w-full cursor-default">
-                      <div className={`shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[var(--panel-border)] bg-[var(--btn-bg)] flex items-center justify-center transition-all duration-300 relative overflow-hidden ${item.hoverBorder}`}>
-                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 group-hover:scale-0">
+                    <div 
+                      className={`flex items-center gap-4 sm:gap-5 p-3 sm:p-4 rounded-2xl border border-transparent transition-all duration-500 group w-full max-w-full hover:bg-[var(--panel-hover)] hover:backdrop-blur-md ${item.hoverBorder} cursor-default`}
+                    >
+                      <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--btn-bg)] border border-[var(--panel-border)] flex items-center justify-center transition-transform duration-700 group-hover:rotate-[360deg] relative overflow-hidden shadow-sm">
+                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 text-[var(--text-muted)] group-hover:text-[var(--text-main)]">
                           {item.icon}
                         </div>
-                        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 scale-0 group-hover:scale-100">
-                          <img src={item.hoverUrl} alt="icon" className={`w-5 h-5 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
+                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                          <img src={item.hoverUrl} alt="icon" className={`w-6 h-6 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
                         </div>
                       </div>
-                      <span className="font-medium text-sm sm:text-base truncate group-hover:text-[var(--accent)] transition-colors">{item.text}</span>
+                      <span className="font-medium text-[15px] sm:text-[17px] text-[var(--text-main)] truncate transition-transform duration-500 group-hover:translate-x-2">
+                        {item.text}
+                      </span>
                     </div>
                   )}
                 </motion.div>
