@@ -104,11 +104,11 @@ const ProjectCard = ({ proj, index }: { proj: any, index: number }) => (
     <h3 className="text-2xl font-medium text-[var(--text-main)] mb-4 tracking-tight z-10 font-display flex flex-wrap items-center gap-3">
       {proj.title}
       {proj.acquired && (
-        <span className="relative flex items-center justify-center ml-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-md bg-[#10b981] opacity-20"></span>
-          <span className="relative inline-flex px-2 py-1 text-[10px] font-bold tracking-widest uppercase bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20 rounded-md">
-            Acquired
+        <span className="relative flex items-center justify-center ml-2 overflow-hidden rounded-md border border-[#10b981]/30 bg-[#10b981]/10 px-2 py-1">
+          <span className="relative z-10 text-[10px] font-bold tracking-widest uppercase text-[#10b981]">
+            Sold
           </span>
+          <div className="absolute inset-0 -translate-x-full animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-[#10b981]/30 to-transparent z-0" />
         </span>
       )}
     </h3>

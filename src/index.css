@@ -303,3 +303,8 @@ html.glow-away .glow-main {
 .input-glass::placeholder {
   color: var(--text-muted);
 }
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
