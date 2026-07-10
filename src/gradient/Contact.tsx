@@ -48,41 +48,36 @@ export const Contact = () => {
               Whether you have an idea for a project, need a technical consultation, or just want to chat about embedded systems and web tech—I'd love to hear from you.
             </p>
 
-            <div className="space-y-6">
+            <div className="flex flex-col gap-1">
               {[
                 { 
-                  icon: <Mail size={18} />, 
-                  hoverUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg',
+                  icon: <Mail size={20} />, 
                   text: 'hemanth2678nanu@gmail.com', 
                   href: 'mailto:hemanth2678nanu@gmail.com',
-                  hoverBorder: 'group-hover:border-[#EA4335] group-hover:shadow-[0_0_15px_#EA433530]'
+                  hoverColor: 'group-hover:text-[#EA4335]'
                 },
                 { 
-                  icon: <Phone size={18} />, 
-                  hoverUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg',
+                  icon: <Phone size={20} />, 
                   text: '+91 9538520031', 
                   href: 'tel:+919538520031',
-                  hoverBorder: 'group-hover:border-[#25D366] group-hover:shadow-[0_0_15px_#25D36630]'
+                  hoverColor: 'group-hover:text-[#25D366]'
                 },
                 { 
-                  icon: <Linkedin size={18} />, 
-                  hoverUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg',
+                  icon: <Linkedin size={20} />, 
                   text: 'hemanth-kumar-98744b313', 
                   href: 'https://www.linkedin.com/in/hemanth-kumar-98744b313',
-                  hoverBorder: 'group-hover:border-[#0A66C2] group-hover:shadow-[0_0_15px_#0A66C230]'
+                  hoverColor: 'group-hover:text-[#0A66C2]'
                 },
                 { 
-                  icon: <Github size={18} />, 
-                  hoverUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
+                  icon: <Github size={20} />, 
                   text: 'github.com/hemanthnanu-tech', 
                   href: 'https://github.com/hemanthnanu-tech',
-                  hoverBorder: 'group-hover:border-[#888888] group-hover:shadow-[0_0_15px_#88888830]'
+                  hoverColor: 'group-hover:text-[var(--text-main)]'
                 },
                 { 
-                  icon: <MapPin size={18} />, 
-                  hoverUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg',
+                  icon: <MapPin size={20} />, 
                   text: 'Bangalore, Karnataka, India',
-                  hoverBorder: 'group-hover:border-[#4285F4] group-hover:shadow-[0_0_15px_#4285F430]'
+                  hoverColor: 'group-hover:text-[#4285F4]'
                 },
               ].map((item, i) => (
                 <motion.div 
@@ -97,36 +92,23 @@ export const Contact = () => {
                       href={item.href} 
                       target={item.href.startsWith('http') ? '_blank' : undefined} 
                       rel="noreferrer" 
-                      className={`flex items-center gap-4 sm:gap-5 p-3 sm:p-4 rounded-2xl border border-transparent transition-all duration-500 group w-full max-w-full hover:bg-[var(--panel-hover)] hover:backdrop-blur-md ${item.hoverBorder}`}
+                      className="group flex items-center gap-4 p-3 -ml-3 rounded-xl transition-all duration-300 hover:bg-[var(--panel-hover)] w-fit"
                     >
-                      <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--btn-bg)] border border-[var(--panel-border)] flex items-center justify-center transition-transform duration-700 group-hover:rotate-[360deg] relative overflow-hidden shadow-sm">
-                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 text-[var(--text-muted)] group-hover:text-[var(--text-main)]">
-                          {item.icon}
-                        </div>
-                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                          <img src={item.hoverUrl} alt="icon" className={`w-6 h-6 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
-                        </div>
+                      <div className={`text-[var(--text-muted)] transition-colors duration-300 ${item.hoverColor}`}>
+                        {item.icon}
                       </div>
-                      <span className="font-medium text-[15px] sm:text-[17px] text-[var(--text-main)] truncate transition-transform duration-500 group-hover:translate-x-2">
+                      <span className="font-medium text-[15px] text-[var(--text-muted)] group-hover:text-[var(--text-main)] transition-colors duration-300">
                         {item.text}
                       </span>
-                      <div className="ml-auto opacity-0 -translate-x-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-0 text-[var(--text-muted)]">
-                        <ArrowUpRight size={20} />
-                      </div>
                     </a>
                   ) : (
                     <div 
-                      className={`flex items-center gap-4 sm:gap-5 p-3 sm:p-4 rounded-2xl border border-transparent transition-all duration-500 group w-full max-w-full hover:bg-[var(--panel-hover)] hover:backdrop-blur-md ${item.hoverBorder} cursor-default`}
+                      className="group flex items-center gap-4 p-3 -ml-3 rounded-xl transition-all duration-300 hover:bg-[var(--panel-hover)] w-fit cursor-default"
                     >
-                      <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[var(--btn-bg)] border border-[var(--panel-border)] flex items-center justify-center transition-transform duration-700 group-hover:rotate-[360deg] relative overflow-hidden shadow-sm">
-                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-0 text-[var(--text-muted)] group-hover:text-[var(--text-main)]">
-                          {item.icon}
-                        </div>
-                        <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                          <img src={item.hoverUrl} alt="icon" className={`w-6 h-6 object-contain ${item.hoverUrl.includes('github') ? 'invert-dark' : ''}`} />
-                        </div>
+                      <div className={`text-[var(--text-muted)] transition-colors duration-300 ${item.hoverColor}`}>
+                        {item.icon}
                       </div>
-                      <span className="font-medium text-[15px] sm:text-[17px] text-[var(--text-main)] truncate transition-transform duration-500 group-hover:translate-x-2">
+                      <span className="font-medium text-[15px] text-[var(--text-muted)] group-hover:text-[var(--text-main)] transition-colors duration-300">
                         {item.text}
                       </span>
                     </div>
