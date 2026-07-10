@@ -101,7 +101,7 @@ export const Contact = () => {
                  <div className="text-[11px] text-[var(--text-muted)] truncate w-full">hemanthnanu-tech</div>
               </motion.a>
 
-              {/* Box 4: WhatsApp (Square/Wide on mobile) */}
+              {/* Box 4: Call (Square/Wide on mobile) */}
               <motion.a 
                 initial={{ opacity: 0, y: 10, filter: 'blur(10px)' }}
                 whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -111,7 +111,7 @@ export const Contact = () => {
                 className="col-span-2 sm:col-span-1 glass-panel !p-5 flex flex-col items-center justify-center text-center group hover:bg-[#25D366]/5 hover:border-[#25D366]/30 transition-all sm:h-40 cursor-pointer"
               >
                  <Phone size={32} className="text-[#25D366] mb-3 group-hover:scale-110 transition-transform" />
-                 <div className="text-[14px] font-medium text-[var(--text-main)] mb-1">WhatsApp</div>
+                 <div className="text-[14px] font-medium text-[var(--text-main)] mb-1">Call</div>
                  <div className="text-[11px] text-[var(--text-muted)] truncate w-full">+91 9538520031</div>
               </motion.a>
 
@@ -165,8 +165,8 @@ export const Contact = () => {
                 value={form.message}
                 onChange={e => setForm(p => ({ ...p, message: e.target.value }))}
               />
-              <button type="submit" className="btn-hero w-full py-4 mt-2 text-[15px]">
-                Send Message <Send size={16} className="ml-2" />
+              <button type="submit" className="btn-hero w-full py-4 mt-2 text-[15px] flex items-center justify-center">
+                Send Message <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-5 h-5 ml-2" />
               </button>
             </form>
           </motion.div>
