@@ -83,10 +83,10 @@ const ProjectCard = ({ proj, index }: { proj: any, index: number }) => (
     href={proj.link}
     target="_blank"
     rel="noopener noreferrer"
-    initial={{ opacity: 0, scale: 0.8, y: 60 }}
-    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+    initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
+    whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
     viewport={{ once: true, margin: "-50px" }}
-    transition={{ type: "spring", stiffness: 100, damping: 15, delay: index * 0.1 }}
+    transition={{ duration: 0.7, delay: index * 0.1, ease: 'easeOut' }}
     className={`group glass-panel flex flex-col h-full relative overflow-hidden cursor-pointer ${proj.colSpan}`}
   >
     <div className="flex justify-between items-start mb-10">
