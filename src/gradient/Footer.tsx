@@ -13,12 +13,6 @@ export const Footer = () => {
           &copy; {new Date().getFullYear()} Hemanth Kumar K. All rights reserved.
         </div>
 
-        <div className="flex items-center gap-2 text-[13px] font-medium text-[var(--text-muted)]">
-          <a href="https://www.linkedin.com/in/hemanth-kumar-98744b313" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-full hover:bg-[var(--text-main)] hover:text-[var(--bg-color)] transition-colors">LinkedIn</a>
-          <a href="https://github.com/hemanthnanu-tech" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-full hover:bg-[var(--text-main)] hover:text-[var(--bg-color)] transition-colors">GitHub</a>
-          <a href="mailto:hemanth2678nanu@gmail.com" className="px-4 py-2 rounded-full hover:bg-[var(--text-main)] hover:text-[var(--bg-color)] transition-colors">Email</a>
-        </div>
-
       </div>
     </footer>
   );
