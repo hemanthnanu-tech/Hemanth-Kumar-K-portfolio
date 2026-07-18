@@ -5,7 +5,7 @@ A highly premium, interactive, and beautifully designed personal portfolio websi
 Built with modern web technologies and designed with a strict focus on sleek monochrome aesthetics, fluid animations, and a dynamic tracking glow effect.
 
 ## 🌟 Live Website
-**[https://hemanthnanu-tech.github.io/Hemanth-Kumar-K-protfolio/](https://hemanthnanu-tech.github.io/Hemanth-Kumar-K-protfolio/)**
+**[https://hemanthnanu-tech.github.io/Hemanth-Kumar-K-portfolio/](https://hemanthnanu-tech.github.io/Hemanth-Kumar-K-portfolio/)**
 
 ## 🛠 Technologies & Architecture
 - **React 18**: Component-based UI architecture
