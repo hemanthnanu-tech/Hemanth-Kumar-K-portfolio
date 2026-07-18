@@ -15,7 +15,7 @@ const SOFTWARE_PROJECTS = [
     desc: 'A premium digital storefront for 1FS Photography, bridging top-tier camera and gimbal rentals with professional photoshoot packages.',
     tags: ['React', 'TypeScript', 'Tailwind'],
     colSpan: 'md:col-span-1 lg:col-span-1',
-    link: 'https://hemanthnanu-tech.github.io/1fs-studio-website/',
+    link: 'https://hemanthnanu-tech.github.io/1fs-studio-rental/',
     acquired: true
   },
   {
